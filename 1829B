@@ -1,0 +1,28 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int n, cnt=0, temp=0;
+        cin >> n;
+        int arr[n];
+        for(int i=0; i<n; i++)
+        {
+            cin >> arr[i];
+            if(arr[i]==0) cnt++;
+            else
+            {
+                if(temp<cnt) temp=cnt;
+                cnt=0;
+            }
+        }
+        if(temp<cnt) temp=cnt;
+        cout << temp << endl;
+    }
+    return 0;
+}
