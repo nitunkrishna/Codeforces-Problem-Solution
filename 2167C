@@ -1,0 +1,41 @@
+#include<iostream>
+#include<algorithm>
+ 
+using namespace std;
+ 
+void res(int arr[], int n);
+ 
+int main()
+{
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int n;
+        cin >> n;
+        int arr[n];
+        int ecnt=0, ocnt=0;
+        for(int i=0; i<n; i++)
+        {
+            cin >> arr[i];
+            if(arr[i]%2==0) ecnt++; // Counting Even numbers
+            else ocnt++; // Counting Odd numbers
+        }
+ 
+        if(ecnt==n || ocnt==n) res(arr, n);
+ 
+        else
+        {
+            sort(arr, arr+n);
+            res(arr, n);
+        }
+    }
+    return 0;
+}
+ 
+void res(int arr[], int n)
+{
+    for (int i=0; i<n; ++i)
+        cout << arr[i] << " ";
+    cout << endl;
+}
