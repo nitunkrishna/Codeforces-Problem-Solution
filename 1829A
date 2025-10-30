@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int t;
+    scanf("%d", &t);
+    while(t--)
+    {
+        char str[11], find[11]="codeforces";
+        scanf("%s", str);
+        int n=strlen(str);
+        int m=strlen(find);
+        int cnt=0;
+        for(int i=0, j=0; i<n && j<m; i++, j++)
+            if(str[i]!=find[j]) cnt++;
+        printf("%d\n", cnt);
+    }
+    return 0;
+}
