@@ -1,0 +1,38 @@
+#include"bits/stdc++.h"
+
+using namespace std;
+
+void dot(int n);
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    for(int i=1; i<=n; i++)
+    {
+        if((i%4)==0)
+        {
+            cout << "#";
+            dot(m-1);
+            cout << endl;
+        }
+        else if((i%2)==0)
+        {
+            dot(m-1);
+            cout << "#" << endl;
+        }
+        else
+        {
+            for(int j=0; j<m; j++)
+                cout << "#";
+            cout << endl;
+        }
+    }
+    return 0;
+}
+
+void dot(int n)
+{
+    for(int i=0; i<n; i++)
+        cout << ".";
+}
