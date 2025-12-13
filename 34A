@@ -1,0 +1,26 @@
+#include"bits/stdc++.h"
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i=0; i<n; i++)
+        cin >> arr[i];
+    int r1=0, r2=n-1;
+    int diff=abs(arr[r1]-arr[r2]);
+    for(int i=0; i<n-1; i++)
+    {
+        int a=abs(arr[i]-arr[i+1]);
+        if(a<diff)
+        {
+            diff=a;
+            r1=i;
+            r2=i+1;
+        }
+    }
+    cout << r1+1 << " " << r2+1 << endl;
+    return 0;
+}
